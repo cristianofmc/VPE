@@ -1,0 +1,44 @@
+
+<h1>Vínculo</h1>
+
+<div class="container">
+    <form (ngSubmit)="!boundForm.invalid && saveBound()" #boundForm="ngForm">
+        <fieldset>
+            <div class="form-group">
+                <label>Profissional</label>
+                <select class="form-control" name="professional" required="required" [(ngModel)]="selectedProfessional" >
+                    <option  *ngFor="let professional of professionals" value="{{professional.id}}" >{{professional.name}}, {{professional.currentFunction}}</option>
+                </select> 
+            </div>
+            <div class="form-group">
+                <label>Estabelecimento</label>
+                <select class="form-control" name="establishment" required="required" [(ngModel)]="selectedEstablishment" >
+                    <option  *ngFor="let establishment of establishments"value="{{establishment.id}}">{{establishment.name}}</option>
+                </select>
+            </div>
+         </fieldset>
+        <button type="submit" class="btn btn-success">Vincular</button>
+    </form>
+    <div class="mt-4">
+        <div class="table-responsive">
+            <table class="bounds table">
+                <thead>
+                    <tr>
+                        <th>Profissional</th>
+                        <th>Estabelecimento</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr *ngFor="let bound of bounds">
+                        <td>{{bound.professional.name}}</td>
+                        <td>{{bound.establishment.name}}</td>
+                        <td><button (click)="deleteBound(bound.id)"  class="btn btn-warning">Excluir</button></td>
+                    </tr>
+                </tbody>
+    
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<h1>Profissionais</h1>
+
+<div class="alert alert-success" role="alert" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="professional table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Função</th>
+                    <th>Celular</th>
+                    <th>Telefone</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let professional of professionals">
+                    <td>{{professional.name}}</td>
+                    <td>{{professional.address}}</td>
+                    <td>{{professional.currentFunction}}</td>
+                    <td>{{professional.cellPhone}}</td>
+                    <td>{{professional.homePhone}}</td>
+                    <td><button (click)="updateProfessional(professional.id)" class="btn btn-success">Editar</button></td>
+                    <td><button (click)="deleteProfessional(professional.id)" class="btn btn-warning">Excluir</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="row">
+        <button (click)="addProfessional()" class="btn btn-primary mt-2">+ Adicionar</button>
+    </div>
+</div>

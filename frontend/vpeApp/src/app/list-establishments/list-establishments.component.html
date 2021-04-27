@@ -1,0 +1,32 @@
+<h1>Estabelecimentos</h1>
+
+<div class="alert alert-success" role="alert" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="establishment table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let establishment of establishments">
+                    <td>{{establishment.name}}</td>
+                    <td>{{establishment.address}}</td>
+                    <td>{{establishment.phone}}</td>
+                    <td><button (click)="updateEstablishment(establishment.id)" class="btn btn-success">Editar</button></td>
+                    <td><button (click)="deleteEstablishment(establishment.id)" class="btn btn-warning">Excluir</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <button (click)="addEstablishment()" class="btn btn-primary">+Adicionar</button>
+    </div>
+</div>

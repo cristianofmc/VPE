@@ -1,0 +1,31 @@
+
+<h1>Profissional</h1>
+
+<div class="container">
+    <form (ngSubmit)="!professionalForm.invalid && saveProfessional()" #professionalForm="ngForm">
+        <fieldset>
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" [(ngModel)]="professional.name" class="form-control" minlength="5" name="name" required="required">
+            </div>
+            <div class="form-group">
+                <label>Endereço</label>
+                <input type="text" [(ngModel)]="professional.address" class="form-control" minlength="5" name="address" required="required">
+            </div>
+            <div class="form-group">
+                <label>Telefone Celular</label>
+                <input type="text" [(ngModel)]="professional.cellPhone" class="form-control" minlength="5" name="cell phone" required="required">
+            </div>
+            <div class="form-group">
+                <label>Telefone Residencial</label>
+                <input type="text" [(ngModel)]="professional.homePhone" class="form-control" minlength="5" name="homephone">
+            </div>
+            <div class="form-group">
+                <label>Função</label>
+                <input type="text" [(ngModel)]="professional.currentFunction" class="form-control" minlength="5" name="function" required="required">
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+
+</div>
