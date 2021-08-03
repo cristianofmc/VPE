@@ -8,7 +8,7 @@ The installation is divided in two parts, frontend and backend. The installation
 * [Readme frontend](frontend/vpeApp/README.md)
 * [Readme backend](backend/restful/README.md)
  
-## Last updates:
+## Last updates
 * More detail has been added to the documentation.
 * Added the MIT license for use
 
